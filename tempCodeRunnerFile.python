@@ -1,0 +1,3 @@
+wei = input('enter you weight in kilo? ')
+kilo = int(wei) / 0.45
+print(kilo)

@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "vs\\.vscode"
+		},
+		{
+			"path": "..\\Web development"
+		},
+		{
+			"path": "..\\Python"
+		}
+	],
+	"settings": {
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 100,
+		"terminal.explorerKind": "external"
+	}
+}
