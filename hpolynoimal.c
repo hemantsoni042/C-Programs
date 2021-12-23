@@ -25,7 +25,7 @@ int main(){
 
 
 
-gchgvjbkfxfcvbjnkliugyftgvhbjklhiyfgchbjrhddddddddddeerrehgryrrrterrgdv
+gchgvjbkfxfcvbjnkliugyftgchgchcugvhgcughgvhbjklhiyfgchbjrhddddddddddeerrehgryrrrterrgdv
 
 	printf("\n2.Polynomial = ");
 	for( i = 0; i <= n; i++){
