@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-void Quicksort(int Ar[], int low, int high)
+void Quicksort(int *Ar, int low, int high)
 {
 
 }
@@ -11,7 +11,7 @@ int main()
     int n, i;
     printf("Enter number of elements for QuickSort :- ");
     scanf("%d", &n);
-    int *Ar[n];
+    int (*Ar)[n];
     printf("Enter the elements for QuickSort :- ");
     for (i = 0; i < n; i++)
         scanf("%d", &Ar[i]);
@@ -21,7 +21,9 @@ int main()
     for (i = 0; i < n; i++)
         printf("%2d ", Ar[i]);
 
-    Quicksort(*Ar[n], 0, n - 1);
+    // *Ar[n] = Quicksort;
+
+    Quicksort(&Ar[n], 0, n - 1);
 
     printf("\nSorted elements are :- ");
 
