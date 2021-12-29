@@ -126,17 +126,31 @@ void insertRt(int value)
     }
 }
 
-delete ()
+void inordertraversal(struct node *temp5)
 {
+    if (temp5 == NULL)
+        return;
+    inordertraversal(temp5->left);
+    printf("%4d", temp5->data);
+    inordertraversal(temp5->right);
 }
 
-void inordertraversal(struct node *temp3)
+void preodertraversal(struct node *temp6)
 {
-    if (temp3 == NULL)
+    if (temp6 == NULL)
         return;
-    inordertraversal(temp3->left);
-    printf("%4d", temp3->data);
-    inordertraversal(temp3->right);
+    printf("%4d", temp6->data);
+    preodertraversal(temp6->left);
+    preodertraversal(temp6->right);
+}
+
+void postordertraversal(struct node *temp7)
+{
+    if (temp7 == NULL)
+        return;
+    postordertraversal(temp7->left);
+    postordertraversal(temp7->right);
+    printf("%4d", temp7->data);
 }
 
 int main()
@@ -145,9 +159,10 @@ int main()
     for (; a < 1;)
     {
         printf("\n1. Insert \n");
-        printf("2. Delete \n");
-        printf("3. Display tree \n");
-        printf("4. Exit from queue \n");
+        printf("2. Display tree Inorder \n");
+        printf("3. Display tree Preorder \n");
+        printf("4. Display tree Postorder \n");
+        printf("5. Exit from queue \n");
         printf("Enter your choice :- ");
         scanf("%d", &n);
         switch (n)
@@ -163,20 +178,16 @@ int main()
                 insertRt(value);
             break;
 
-            // case 2:
-            //     insertLf();
-            //     break;
-
-            // case 3:
-            //     insertRt();
-            //     break;
-
         case 2:
-            delete ();
+            inordertraversal(root);
             break;
 
         case 3:
-            inordertraversal(root);
+            preodertraversal(root);
+            break;
+
+        case 4:
+            postordertraversal(root);
             break;
 
         default:
