@@ -34,10 +34,6 @@ void insertLf(int value)
             temp1 = newno;
             temp3 = temp1;
         }
-        else
-        {
-            printf("\n\nInsertion is not possible given input is greater than or equal root !!\n\n");
-        }
     }
     else
     {
