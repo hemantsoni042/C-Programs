@@ -17,6 +17,19 @@ int main()
         printf("%3d", ar[i]);
     }
 
+    for(i=2;i<n;i++)
+    {
+        for(j=0;j<=i;j++)
+        {
+            if(ar[j] > ar[i])
+            {
+                temp = ar[i];
+                ar[i] = ar[j];
+                ar[j] = temp;
+            }
+        }
+    }
+
     printf("\n\nSorted elements are :- ");
     for (i = 0; i < n; i++)
     {
