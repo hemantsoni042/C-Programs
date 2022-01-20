@@ -16,7 +16,7 @@ int main()
     {
         printf("%3d", ar[i]);
     }
-    i = 0;
+    i = 0;hjvjyfyufuyfyufyyfy
 
     while (i < n)
     {

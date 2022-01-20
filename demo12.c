@@ -5,7 +5,7 @@ int main()
     int i,n;
     printf("enter number input less than and equal to 4");
    scanf("%d",&n);
-for(i=0;i<n;i++)
+for(i=0;i<n;i++)hnvhjvjhyjjhfjfh
 {
       scanf("%d",&ar[i]);
 
