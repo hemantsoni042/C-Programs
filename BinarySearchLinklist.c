@@ -7,8 +7,9 @@ struct node
 };
 
 struct node *head = NULL;
-struct node *temp1, *temp2, *temp3, *temp4, *temp5, *temp6, *temp7;
+struct node *temp1, *temp2, *temp3, *temp4, *temp5, *temp6, *temp7, *temp8;
 struct node *newno;
+int n = 0;
 
 void insertSTll()
 {
@@ -29,6 +30,7 @@ void insertSTll()
         newno->addrs = temp4;
         head = newno;
     }
+    n++;
 }
 
 void insertLAll()
@@ -59,6 +61,7 @@ void insertLAll()
         temp1->addrs = newno;
         temp1 = newno;
     }
+    n++;
 }
 
 void insertASll()
@@ -90,6 +93,7 @@ void insertASll()
             temp5 = temp5->addrs;
         }
     }
+    n++;
 }
 
 void deletionSTll()
@@ -103,6 +107,7 @@ void deletionSTll()
         printf("\n%d is deleted\n", head->data);
         head = head->addrs;
     }
+    n--;
 }
 
 void deletionLAll()
@@ -122,6 +127,7 @@ void deletionLAll()
 
         temp3->addrs = NULL;
     }
+    n--;
 }
 
 void deletionASll()
@@ -154,6 +160,7 @@ void deletionASll()
         printf("\n%d is deleted\n", temp6->addrs->data);
         temp6->addrs = temp6->addrs->addrs;
     }
+    n--;
 }
 
 void displayll()
@@ -179,14 +186,22 @@ void displayll()
     }
 }
 
-void searchLL()
+void searchLL(int ar[], int value, int lb, int ub)
 {
-    temp7 = head;
+    int index = (lb + ub) / 2;
+    if (ar[index] == value)
+        printf("Given %d value is find at %d position !!\n", value, index + 1);
+    else if (ar[index] > value)
+        searchLL(ar, value, 0, index - 1);
+    else if (ar[index] < value)
+        searchLL(ar, value, index + 1, ub);
+    else
+        printf("Given %d value is not in the given array !!\n", value);
 }
 
 int main()
 {
-    int n, a = 0;
+    int l, a = 0, value, ar[n], i;
     while (a < 1)
     {
         printf("\n1. Insert in linklist at start \n");
@@ -199,8 +214,8 @@ int main()
         printf("8. Search a value  \n");
         printf("9. Exit from linklist \n");
         printf("Enter your choice :- ");
-        scanf("%d", &n);
-        switch (n)
+        scanf("%d", &l);
+        switch (l)
         {
         case 1:
             insertSTll();
@@ -231,7 +246,13 @@ int main()
             break;
 
         case 8:
-            searchLL();
+            temp8 = head;
+            for (i = 0; i < n; i++,temp8=temp8->addrs)
+                ar[i] = temp8->data;
+
+            printf("Which number you want to search in the array :- ");
+            scanf("%d", &value);
+            searchLL(ar, value, 0, n - 1);
             break;
 
         default:
