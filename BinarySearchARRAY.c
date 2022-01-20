@@ -14,7 +14,7 @@ void binarysearch(int ar[], int value, int lb, int ub)
 }
 
 int main()
-{yudfufuyfuyfuyfufyu
+{
     int n, i, value;
     printf("Enter number of elements :- ");
     scanf("%d", &n);
