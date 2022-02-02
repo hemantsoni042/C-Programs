@@ -1,16 +1,24 @@
 #include <stdio.h>
 
-void binarysearch(int ar[], int value, int lb, int ub)
+int binarySearch(int input[],int n, int x)
 {
-    int index = (lb + ub) / 2;
-    if (ar[index] == value)
-        printf("Given %d value is find at %d position !!", value, index+1);
-    else if (ar[index] > value)
-        binarysearch(ar, value, 0, index - 1);
-    else if (ar[index] < value)
-        binarysearch(ar, value, index + 1, ub);
-    else
-        printf("Given %d value is not in the given array !!", value);
+    int a,b;
+    a=0;
+    b=n-1;
+    int mid = (a+b)/2;
+    while(a<=b)
+    {
+        if(x == input[mid])
+            return mid;
+        else if(x > input[mid] &&  mid == n-1)
+            return -1;
+        else if(x > input[mid])
+            a = mid + 1;
+        else if(x < input[mid])
+            b = mid - 1;
+        mid = (a+b)/2;
+    }
+    return -1;
 }
 
 int main()
@@ -28,7 +36,7 @@ int main()
     printf("Which number you want to search in the array :- ");
     scanf("%d", &value);
 
-    binarysearch(ar, value, 0, n - 1);
+    printf("%2d",binarySearch(ar,n , value));
 
     return 0;
 }

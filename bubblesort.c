@@ -21,7 +21,7 @@ int main()
     while (i < n)
     {
         j = 0;
-        while (j < (n - i))
+        while (j < (n - i -1))
         {
             if (ar[j + 1] < ar[j])
             {

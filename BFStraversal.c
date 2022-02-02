@@ -13,7 +13,7 @@ int a[20][20],q[20], visited[20], n, i, j, f = 0, r = -1;
 
 void bfs(int v)
 {
-    for (i = 0; i <= n; i++)
+    for (i = 0; i < n; i++)
         if (a[v][1] && !visited[i])
             q[++r] = i;
     if (f <= r)
@@ -32,7 +32,7 @@ int main()
 
     scanf("%d", &n);
 
-    for (i = 0; i <= n; i++)
+    for (i = 0; i < n; i++)
     {
         q[i] = 0; 
         visited[i] = 0;
@@ -50,7 +50,7 @@ int main()
     bfs(v);
 
     printf("\n The node which are reachable are: \n");
-    for (i = 0; i <= n; i ++)
+    for (i = 0; i < n; i ++)
         if (visited[i])
             printf("%d\t", i);
         else
