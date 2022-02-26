@@ -11,7 +11,7 @@ struct node
 struct node *root = NULL;
 struct node *newno;
 struct node *temp1, *temp2, *temp3, *temp4;
-int n;
+int fg = 0;
 
 void insertRo(int value)
 {
@@ -19,7 +19,6 @@ void insertRo(int value)
     root->data = value;
     root->left = NULL;
     root->right = NULL;
-    n = 1;
 }
 
 void insertLf(int value)
@@ -70,7 +69,6 @@ void insertLf(int value)
             temp1->right = newno;
         }
     }
-    n++;
 }
 
 void insertRt(int value)
@@ -123,7 +121,6 @@ void insertRt(int value)
             temp2 = newno;
         }
     }
-    n++;
 }
 
 void inordertraversal(struct node *temp5)
@@ -135,27 +132,22 @@ void inordertraversal(struct node *temp5)
     inordertraversal(temp5->right);
 }
 
-int binarySearch(struct node *temp6,int key)
+void binarySearch(struct node *temp6, int key)
 {
-    if(temp6->data == key)
-       return 1;
-    else if(temp6->data > key && temp6->left != NULL)
-    {
-       temp6 = temp6->left;
-       binarySearch(temp6,key);
-    }
-    else if(temp6->data < key && temp6->right != NULL)
-    {
-       temp6 = temp6->right;
-       binarySearch(temp6,key);
-    }
+    if (temp6->data == key)
+        fg++;
     else
-       return 0;
+    {
+        if ((temp6->data > key) && (temp6->left != NULL))
+            binarySearch(temp6->left, key);
+        else if ((temp6->data < key) && (temp6->right != NULL))
+            binarySearch(temp6->right, key);
+    }
 }
 
 int main()
 {
-    int n, b, a = 0, value,key;
+    int n, b, a = 0, value, key;
     for (; a < 1;)
     {
         printf("\n1. Insert \n");
@@ -178,17 +170,21 @@ int main()
             break;
 
         case 2:
+            printf("\n\n");
             inordertraversal(root);
+            printf("\n\n");
             break;
 
         case 3:
             printf("Which element you want to search :-  ");
-            scanf("%d",&key);
-            b = binarySearch(root,key);
-            if (b > 0)
+            scanf("%d", &key);
+            binarySearch(root, key);
+            if (fg > 0)
                 printf("\n\nElement is found in the tree !!!!\n\n");
             else
                 printf("\n\nElement is not found in the tree !!!!\n\n");
+            
+            fg = 0;
             break;
 
         default:

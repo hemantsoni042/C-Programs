@@ -17,7 +17,7 @@ int main()
         printf("%3d", ar[i]);
     }
 
-    for(i=2;i<n;i++)
+    for(i=1;i<n;i++)
     {
         for(j=0;j<=i;j++)
         {
