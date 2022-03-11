@@ -147,7 +147,7 @@ void binarySearch(struct node *temp6, int key)
 
 int main()
 {
-    int n, b, a = 0, value, key;
+    int n, a = 0, value, key;
     for (; a < 1;)
     {
         printf("\n1. Insert \n");

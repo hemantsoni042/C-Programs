@@ -1,12 +1,3 @@
-// #include <stdio.h>
-
-// int ar[10][10], que[10], i, j,
-
-//     int
-//     main()
-// {
-// }
-
 #include <stdio.h>
 
 int a[20][20],q[20], visited[20], n, i, j, f = 0, r = -1;
@@ -26,7 +17,6 @@ void bfs(int v)
 int main()
 {
 
-    int v;
 
     printf("\n Enter the number of vertices :- ");
 
@@ -43,11 +33,7 @@ int main()
         for (j = 0; j < n; j++)
             scanf("%d", &a[i][j]);
 
-    printf("\n Enter the starting vertex :- ");
-
-    scanf("%d", &v);
-
-    bfs(v);
+    bfs(0);
 
     printf("\n The node which are reachable are: \n");
     for (i = 0; i < n; i ++)

@@ -13,7 +13,7 @@ void dfs(int i)
             dfs(j);
     }
 }
-void main()
+int main()
 {
     int i, j;
     printf("Enter number of vertices :- ");
@@ -27,5 +27,5 @@ void main()
         visited[i] = 0;
     dfs(0);
 
-    
-`}
+    return 0;
+}
