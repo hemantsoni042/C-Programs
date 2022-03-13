@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-int a[20][20],q[20], visited[20], n, i, j, f = 0, r = -1;
+int a[20][20],q[20]={0}, visited[20]={0}, n, i, j, f = 0, r = -1;
 
 void bfs(int v)
 {
     for (i = 0; i < n; i++)
-        if (a[v][1] && !visited[i])
+        if (a[v][i] && !visited[i])
             q[++r] = i;
     if (f <= r)
     {
@@ -16,17 +16,9 @@ void bfs(int v)
 
 int main()
 {
-
-
     printf("\n Enter the number of vertices :- ");
 
     scanf("%d", &n);
-
-    for (i = 0; i < n; i++)
-    {
-        q[i] = 0; 
-        visited[i] = 0;
-    }
 
     printf("\n Enter graph data in matrix form: \n");
     for (i = 0; i < n; i++)
@@ -45,4 +37,3 @@ int main()
     return 0;
     
 }
-
